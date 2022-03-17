@@ -8,12 +8,12 @@
 - Create React App CLI
 - Bootstrap and Axios HTTP Library
 ## Server-side technologies used
-- Spring boot
+- Spring boot 2.6.4
 - Spring Data JPA
 - Maven
-- JDK 17
+- Amazon Corretto 17
 - Embedded Tomcat
-- MariaDB
+- MariaDB 10.6
 - IntelliJ IDE 
 
 
