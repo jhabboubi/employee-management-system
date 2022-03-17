@@ -1,7 +1,7 @@
 ### Employee Management System
 
 ## Frontend-side tools and technologies used
-- React
+- React [Front-end Repository](https://github.com/jhabboubi/employee-management-system-react)
 - Modern JavaScript (ES6)
 - NodeJS & NPM
 - VS Code IDE
