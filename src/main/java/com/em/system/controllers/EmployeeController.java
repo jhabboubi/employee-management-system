@@ -1,10 +1,12 @@
 package com.em.system.controllers;
 
+import com.em.system.exceptions.ResourceNotFoundException;
 import com.em.system.models.Employee;
 import com.em.system.repositories.EmployeeRepository;
 import lombok.AccessLevel;
 import lombok.experimental.FieldDefaults;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,5 +29,10 @@ public class EmployeeController {
     public Employee createEmployee(@RequestBody Employee employee){
         return employeeRepository.save(employee);
     }
-
+    @GetMapping("/employees/{id}")
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable Long id){
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(String.format("Employee ID: %d doesn't exist.",id)));
+        return ResponseEntity.ok(employee);
+    }
 }
